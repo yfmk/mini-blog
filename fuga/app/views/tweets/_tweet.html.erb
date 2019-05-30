@@ -1,0 +1,23 @@
+<div class="content_post" style="background-image: url(<%= tweet.image %>);">
+        <% if user_signed_in? && current_user.id == tweet.user_id %>
+      <% end %>
+      <div class="tweet">
+        <div class="honbun">
+          <%= simple_format(tweet.text) %>
+        </div>
+        <span class="name"><%= tweet.name %></span>
+      <ul class="more_list">
+            <li>
+              <%= link_to '編集', "/tweets/#{tweet.id}/edit", method: :get %>
+            </li>
+
+            <li>
+              <%= link_to '削除', "/tweets/#{tweet.id}", method: :delete %>
+            </li>
+          </ul>
+          
+      </div>
+
+      </div>
+      
+       
